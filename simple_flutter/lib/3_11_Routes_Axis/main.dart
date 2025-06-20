@@ -25,17 +25,18 @@ class Home extends StatelessWidget{
               icon: Icon(Icons.person))
         ],
       ),
-      body: Column(
-        children: [
-          Text("Home Page"),
-          ElevatedButton(
-              onPressed : (){
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => About()));
-              },
-              child: Text("Go To About Page"))
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment : MainAxisAlignment.center,
+          children: [
+            Text("Home Page"),
+            ElevatedButton(
+                onPressed : (){
+                  Navigator.pushNamed(context, '/About');
+                },
+                child: Text("Go To About Page"))
+          ],
+        ),
       ),
     );
   }
@@ -50,14 +51,18 @@ class About extends StatelessWidget {
       appBar: AppBar(
         title: Text("About Page"),
       ),
-      body: Row(
-        children: [
-          Text("About Page"),
-          ElevatedButton(
-              onPressed: (){ Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Home()));},
-              child: Text("Go To Home Page"))
-        ],
+      body: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("About Page"),
+            ElevatedButton(
+                onPressed: (){
+                 Navigator.pushNamed(context, '/');
+                },
+                child: Text("Go To Home Page"))
+          ],
+        ),
       ),
     );
   }
