@@ -17,3 +17,16 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/images/flutterLogo.png
+
+  fonts:
+    - family: English
+      fonts:
+        - asset: assets/fonts/lora_regular.ttf
+
+    - family: Burmese
+      fonts:
+        - asset: assets/fonts/padauk_regular.ttf
+

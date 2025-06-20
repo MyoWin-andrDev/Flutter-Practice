@@ -13,18 +13,66 @@ class Home extends StatelessWidget{
               icon: Icon(Icons.person))
         ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment : MainAxisAlignment.center,
-          children: [
-            Text("Home Page"),
-            ElevatedButton(
-                onPressed : (){
-                  Navigator.pushNamed(context, '/About');
-                },
-                child: Text("Go To About Page"))
-          ],
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment : MainAxisAlignment.center,
+            children: [
+              Text(
+                  "Home Page",
+                  style: TextStyle(
+                  fontSize: 40,
+                  fontFamily: 'English'
+                ),
+              ),
+              ElevatedButton(
+                  onPressed : (){
+                    Navigator.pushNamed(context, '/About');
+                  },
+                  child: Text(
+                      "Go To About Page",
+                    style: TextStyle(
+                      fontFamily: 'English'
+                    ),
+                  )),
+              Text(
+                'ယခု စာမျက်နှာ သည် Lorem ipsum များကို မြန်မာ Version အနေနဲ့ ထုတ်ပေးထားခြင်းဖြစ်ပါသည်။ စာပိုဒ် (၅) ပိုဒ်ပါ၀င်ပြီး စာပိုဒ် တစ်ခုချင်းစီတွင် ၀ါကျ (၅) ခုမှ (၆) အထိပါ၀င်ပါသည်။ စာလုံးတိုင်းတွင် လူသုံးနည်းသော ပါဠိ စာတစ်၀က် နှင့် လူသုံးများသော မြန်မာစာ တစ်၀က် ပါ၀င် ပါသည်။ ပါ၀င်သော ပါဠိစာများသည် ပုံမှန် စာဖတ်သူများ အတွက် ဖတ်ရှုရန် ခက်ခဲသော စာများဖြစ်စေပါသည်။ pseudo-sentence စာများကို generate လုပ်သည့် အဆင့် တစ်ဆင့်စီကို အောက်ပါစာပိုဒ်တွင် ဖော်ပြထားပါသည်။',
+                style: TextStyle(
+                  fontFamily: 'Burmese'
+                ),
+              ),
+              SizedBox(height: 20,),
+              Image.asset(
+                  'assets/images/flutterLogo.png',
+                width: 300,
+                height: 300,
+              )
+            ],
+          ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: (){
+            print("U Clicked Me !!!");
+          },
+          child: Icon(Icons.add),
+      ),
+      drawer: Drawer(),
+      bottomNavigationBar: BottomNavigationBar(
+          items: [
+            BottomNavigationBarItem(
+                label: "Home",
+                icon: Icon(Icons.home)),
+            BottomNavigationBarItem(
+                label : "About",
+                icon: Icon(Icons.person)),
+            BottomNavigationBarItem(
+                label: "Register",
+                icon: Icon(Icons.app_registration))
+          ],
+          onTap: (ind){
+            print(ind.toString());
+          },
       ),
     );
   }
