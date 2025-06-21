@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_flutter/3_12_Split/About.dart';
 
 class Home extends StatelessWidget{
   @override
@@ -27,7 +28,9 @@ class Home extends StatelessWidget{
               ),
               ElevatedButton(
                   onPressed : (){
-                    Navigator.pushNamed(context, '/About');
+                   // Navigator.pushNamed(context, '/About');
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => About(name: "Ezekiel", num: 11)
+                    ));
                   },
                   child: Text(
                       "Go To About Page",
